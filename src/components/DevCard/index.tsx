@@ -39,6 +39,7 @@ export function DevCard({ user, account }: DevCardProps) {
             <div className="nameAndCreatedAt">
               <h1>{user.name}</h1>
               <time>Joined {account.created_at}</time>
+              <img className="mobileAvatar" src={user.avatar_url} alt="avatar" />
             </div>
             <span className="username">@{user.username}</span>
             <p>{user.bio !== null ? user.bio : "This profile has no bio"}</p>

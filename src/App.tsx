@@ -84,7 +84,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <ToastContainer theme="colored" autoClose={3000} pauseOnHover={false} toastStyle={{ backgroundColor: "#FF0000", color:"#fff" }}/>
+        <ToastContainer 
+          theme="colored" 
+          toastClassName="errorAlert"
+          autoClose={3000} 
+          pauseOnHover={false} 
+        />
         <Header handleSwitchTheme={handleSwitchTheme} theme={theme.title} />
         <Input handleSearchUser={handleSearchUser} handleChangeInput={handleChangeInput} />
         <DevCard user={user} account={accountInformations}/>

@@ -11,7 +11,7 @@ export function Input({ handleSearchUser, handleChangeInput }: InputProps) {
   return (
     <Container>
       <button type="button" className="icon">
-        <FiSearch size="2rem" color="var(--secondary)" />
+        <FiSearch size="2rem" onClick={handleSearchUser} color="var(--secondary)" />
       </button>
 
       <input
