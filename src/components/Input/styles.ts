@@ -15,7 +15,7 @@ export const Container = styled.div`
     background: transparent;
     outline: none;
     border: 0;
-    max-width: 740px;
+    max-width: 770px;
     width: 100%;
     font-size: 1.25rem;
   }
@@ -24,7 +24,6 @@ export const Container = styled.div`
     background: transparent;
     border: 0;
     margin-right: 2rem;
-
     transition: filter 0.2s;
 
     &:hover {

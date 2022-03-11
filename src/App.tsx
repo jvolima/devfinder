@@ -22,6 +22,7 @@ type User = {
 }
 
 type AccountInformations = {
+  created_at: string;
   followers: number;
   following: number;
   public_repos: number;
@@ -40,28 +41,38 @@ function App() {
   }
 
   async function handleSearchUser() {
-    const response = await api.get(`${username}`)
-    const data = response.data;
+    try {
+      const response = await api.get(`${username}`)
+      const data = response.data;
 
-    const user: User = {
-      name: data.name,
-      avatar_url: data.avatar_url,
-      bio: data.bio,
-      blog: data.blog,
-      company: data.company,
-      location: data.location,
-      twitter_username: data.twitter_username,
-      username
-    }
+      const user: User = {
+        name: data.name,
+        avatar_url: data.avatar_url,
+        bio: data.bio,
+        blog: data.blog,
+        company: data.company,
+        location: data.location,
+        twitter_username: data.twitter_username,
+        username
+      }
+  
+      const account: AccountInformations = {
+        followers: data.followers,
+        following: data.following,
+        public_repos: data.public_repos,
+        created_at: new Date(data.created_at).toLocaleDateString("en-US", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric"
+        })
+      }
+  
+      setUser(user);
+      setAccountInformations(account)
 
-    const account: AccountInformations = {
-      followers: data.followers,
-      following: data.following,
-      public_repos: data.public_repos,
-    }
-
-    setUser(user);
-    setAccountInformations(account)
+    } catch(error) {
+      alert(error)
+    }  
   }
 
   function handleSwitchTheme() {

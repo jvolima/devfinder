@@ -22,8 +22,9 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --background: ${props => props.theme.colors.background};
     --primary: ${props => props.theme.colors.primary};
-    --secondary: ${props => props.theme.colors.secondary}
-    --text: ${props => props.theme.colors.text}
+    --secondary: ${props => props.theme.colors.secondary};
+    --text: ${props => props.theme.colors.text};
+    --gray-400: ${props => props.theme.colors.gray};
   }
 
   body {
