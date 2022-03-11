@@ -1,5 +1,7 @@
 import React from "react"
 import { useState } from "react"
+import 'react-toastify/dist/ReactToastify.min.css'; 
+import { ToastContainer, toast } from "react-toastify"
 import { DefaultTheme, ThemeProvider } from "styled-components"
 import { DevCard } from "./components/DevCard"
 import { Header } from "./components/Header"
@@ -71,7 +73,7 @@ function App() {
       setAccountInformations(account)
 
     } catch(error) {
-      alert(error)
+      toast.error("User not found!")
     }  
   }
 
@@ -82,6 +84,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
+        <ToastContainer theme="colored" autoClose={3000} pauseOnHover={false} toastStyle={{ backgroundColor: "#FF0000", color:"#fff" }}/>
         <Header handleSwitchTheme={handleSwitchTheme} theme={theme.title} />
         <Input handleSearchUser={handleSearchUser} handleChangeInput={handleChangeInput} />
         <DevCard user={user} account={accountInformations}/>
