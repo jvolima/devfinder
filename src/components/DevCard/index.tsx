@@ -15,6 +15,7 @@ type User = {
 }
 
 type AccountInformations = {
+  html_url: string;
   created_at: string;
   followers: number;
   following: number;
@@ -41,7 +42,7 @@ export function DevCard({ user, account }: DevCardProps) {
               <time>Joined {account.created_at}</time>
               <img className="mobileAvatar" src={user.avatar_url} alt="avatar" />
             </div>
-            <span className="username">@{user.username}</span>
+            <a className="username" href={account.html_url} target="_blank">@{user.username}</a>
             <p>{user.bio !== null ? user.bio : "This profile has no bio"}</p>
             <div className="accountInfos">
               <div>
@@ -68,7 +69,7 @@ export function DevCard({ user, account }: DevCardProps) {
                   {user.twitter_username !== null ? user.twitter_username : "Not Available"}
                 </h4>
               </div>
-              <div>
+              <div className="divBlog">
                 <FiLink />
                 <h4 className={`${user.blog === "" && "notAvailable"}`}>
                   {user.blog !== "" ? user.blog : "Not available"}

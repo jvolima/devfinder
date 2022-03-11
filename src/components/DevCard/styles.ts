@@ -62,6 +62,7 @@ export const ContainerUser = styled.div`
     .username {
       display: block;
       margin-top: 0.75rem;
+      text-decoration: none;
       color: ${props => props.theme.colors.secondary}
     }
 
@@ -110,6 +111,16 @@ export const ContainerUser = styled.div`
 
         .notAvailable {
           color: var(--gray-400)
+        }
+      }
+
+      @media (max-width: 570px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .divBlog {
+          display: none;
         }
       }
     }

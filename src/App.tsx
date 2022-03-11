@@ -28,6 +28,7 @@ type AccountInformations = {
   followers: number;
   following: number;
   public_repos: number;
+  html_url: string;
 }
 
 function App() {
@@ -66,7 +67,8 @@ function App() {
           day: "2-digit",
           month: "short",
           year: "numeric"
-        })
+        }),
+        html_url: data.html_url
       }
   
       setUser(user);
