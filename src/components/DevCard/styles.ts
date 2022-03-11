@@ -98,7 +98,7 @@ export const ContainerUser = styled.div`
       margin-top: 1.75rem;
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
       div {
         display: flex;
